@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssnormalize/cssnormalize-min.css">
+    <style>
+        body{
+            display: inline-flex;
+        }
+        form {
+            width: fit-content;
+            height: fit-content;
+            border: solid gray 2px;
+            margin-left: 10px;
+        }
+        form > *{
+            
+            display: list-item;
+            list-style: none;
+            padding: 5px ;
+            margin: 8px;
+
+        }
+
+        img {
+            width:60em;
+            height: 30em;
+        }
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    <div>
+    <h3>Welcome abord. You can search movies and know their summary. But you need to have an account first.</h3>
+    <img src="/images/Screenshot_1.jpeg" alt="IMAGE">
+    </div>
+    <div style="margin:  0em 0em 0em 10em;">
+        <% if (messages.error) { %>
+            <%= messages.error %>
+          <% } %>
+    <h2 style="text-decoration: underline; color : darkslategray; margin-left: 5px;">Login</h2>
+    <br>
+    <form action="/login" method="POST">
+        <label for="InputEmail">Email address</label>
+        <input type="email" id="InputEmail" name="email" placeholder="Enter your Email" required>
+        <label for="InputPassword">Password</label>
+        <input type="password" id="InputPassword" name="password" placeholder="Enter password" required>
+        <button type="submit" id="button">Login</button>
+    </form>   
+    <br> 
+    <a  style="margin-left: 10px;"href="/register">Register</a>
+    </div>
+</body>
+</html>
